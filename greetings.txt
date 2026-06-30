@@ -1,0 +1,44 @@
+[MINGGU]
+Selamat Hari Minggu, {nama_lengkap}! Ini hari libur lho, kok DC andalan kita yang paling rajin ini masih betah buka laptop kerja?
+Halo {nama_lengkap}! Server sampai heran melihatmu login di hari libur. Selesaikan tugasmu dengan cepat menggunakan perintah ringkas, lalu pergilah berlibur!
+Selamat Hari Minggu, {nama_lengkap}! Lembur lagi demi dokumen ATP yang sempurna? Tenang, sistem akan mempercepat pekerjaanmu agar kamu bisa segera rebahan.
+Wah, admin DC kita lembur di hari Minggu! Tolong kasih tahu bosmu kalau Document Control juga butuh piknik, {nama_lengkap}!
+Hari Minggu tetap buka laptop? Dedikasi yang luar biasa, {nama_lengkap}. Biarkan mesin yang menyalin sheet-nya, kamu cukup mengawasi.
+Selamat libur yang tertunda, {nama_lengkap}! Mari selesaikan draf Fase 1 ini sebelum matahari terbenam.
+Halo {nama_lengkap}, ingatlah bahwa validasi redaman kabel bisa menunggu, tapi kewarasanmu lebih utama. Kerjakan seperlunya saja hari ini!
+
+[PAGI]
+Selamat Pagi, {nama_lengkap}! Folder baru sudah siap diisi, mari rapikan dokumen sipil kita pagi ini agar siap rilis.
+Halo {nama_lengkap}! Semangat pagi untuk seorang DC teladan. Mari kita pastikan semua data umum di support table sudah sinkron.
+Selamat Pagi, Master DC {nama_lengkap}! Kopi hitam sudah siap di meja? Saatnya menyortir dokumen ATP dan membiarkan sistem bekerja untukmu.
+Pagi yang cerah, {nama_lengkap}! Pastikan tidak ada typo di ID FDT hari ini. Satu klik untuk puluhan sheet yang sempurna.
+Selamat Pagi! Tarik napas panjang, siapkan manifest dari tim lapangan, mari kita eksekusi log Fase 1 bersama {nama_lengkap}.
+Halo {nama_lengkap}! Awali shift pagi ini dengan mengecek batas threshold sheet. Mesin An_ Engine siap menyuntik data secepat kilat.
+Pagi, {nama_lengkap}! Jangan biarkan revisi menumpuk. Mari generate dokumen Cluster dan Subfeeder sekarang juga.
+
+[SIANG]
+Selamat Siang, {nama_lengkap}! Sudah jam istirahat, rehatkan mata dulu dari tumpukan kode FAT dan penamaan rute Line.
+Siang {nama_lengkap}! Tetap teliti di jam rawan ngantuk. Tenang, validasi dokumen ini dijamin aman oleh sistem.
+Selamat Siang, Master DC {nama_lengkap}! Sambil menunggu data angka OPM dari tim lapangan, mari rakit draf struktur Fase 1 dulu.
+Halo {nama_lengkap}! Matahari sedang terik, tapi pastikan data tabel tiang kita tetap sejuk dan rapi tanpa error.
+Selamat Siang! Jika angka redaman sudah masuk, langsung bulk upload saja. Mesin siap mengolahnya untukmu, {nama_lengkap}.
+Siang, {nama_lengkap}! Pastikan beda antara Pole dan Ext Pole tidak tertukar di baris perintah. Tetap fokus!
+Halo {nama_lengkap}, jaga energi. Masih banyak rute kabel distribusi yang butuh sentuhan ajaib seorang DC hari ini.
+
+[SORE]
+Selamat Sore, {nama_lengkap}! Evaluasi dokumen terakhir untuk hari ini, mari pastikan tidak ada sheet master yang lolos.
+Sore, {nama_lengkap}! Dokumen Cluster dan Subfeeder sudah siap diunduh secara terpisah. Yuk, bersiap untuk pulang.
+Selamat Sore! Kerja bagus hari ini sebagai DC, {nama_lengkap}. Klik tombol unduh dan biarkan sisa pekerjaan administrasi beres otomatis.
+Halo {nama_lengkap}! Waktunya wrapping up. Pastikan semua Berita Acara sudah lengkap sebelum di-generate.
+Sore yang produktif, {nama_lengkap}! Satu tombol unduh lagi sebelum kita menutup lembaran kerja hari ini.
+Selamat Sore, {nama_lengkap}. Sinkronisasi data aman, kapasitas sel tidak bocor. Kerja yang sangat solid hari ini!
+Sore, Master DC {nama_lengkap}! Jika semua sudah hijau, amankan file zip-nya dan selamat beristirahat.
+
+[MALAM]
+Selamat Malam, {nama_lengkap}! Masih setia di depan laptop demi dokumen rapi? Jangan terlalu malam, server saja butuh istirahat.
+Malam, {nama_lengkap}! Suasana sunyi memang paling pas untuk memverifikasi keakuratan penulisan tiang baru dan eksis.
+Halo {nama_lengkap}, pejuang shift malam! Mesin siap menemani lemburmu membedah angka OTDR tanpa lelah.
+Selamat Malam! Apresiasi tertinggi untuk {nama_lengkap} yang masih mengawal redaman kabel di jam segini.
+Malam, {nama_lengkap}. Kalau angkanya sudah pas, langsung klik unduh saja. Biar sistem yang beresin sisa sheet-nya.
+Halo {nama_lengkap}. Malam makin larut, pastikan file template tidak ada yang terhapus secara tak sengaja.
+Selamat Malam, {nama_lengkap}. Dedikasimu memastikan proyek lapangan besok berjalan lancar tanpa kendala administrasi.
