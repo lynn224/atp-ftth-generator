@@ -29,11 +29,9 @@ DB_DIR = "history_database"
 GREETINGS_PATH = "greetings.txt"
 os.makedirs(DB_DIR, exist_ok=True)
 st.set_page_config(page_title="Universal ATP Generator", layout="wide")
+
 # =============================================================================
-# ”9ä6 [BLOK RUANG STANDBY SISTEM LOGIN & HAK AKSES ADMIN]
-# =============================================================================
-# =============================================================================
-# SISTEM AUTENTIKASI (PENGUNCI GERBANG)
+# 🔐 [BLOK RUANG STANDBY SISTEM LOGIN & HAK AKSES ADMIN]
 # =============================================================================
 if "is_logged_in" not in st.session_state:
     st.session_state.is_logged_in = False
@@ -41,7 +39,7 @@ if "is_logged_in" not in st.session_state:
     st.session_state.user_full_name = None
 
 if not st.session_state.is_logged_in:
-    st.title("”9ä8 Log In - Universal ATP Generator")
+    st.title("🔐 Log In - Universal ATP Generator")
     user = st.text_input("Username")
     pwd = st.text_input("Password", type="password")
     if st.button("Masuk"):
@@ -59,9 +57,9 @@ if not st.session_state.is_logged_in:
 # PANEL KENDALI ADMINISTRATOR
 # =============================================================================
 if st.session_state.user_role == "administrator":
-    st.title(f"7±5„1‚5 Panel Administrator - {st.session_state.user_full_name}")
+    st.title(f"⚙ Panel Administrator - {st.session_state.user_full_name}")
     
-    tab_admin1, tab_admin2 = st.tabs(["”9Ó5 Manajemen Operator DC", "”9Ý6 Pengawasan Proyek"])
+    tab_admin1, tab_admin2 = st.tabs(["🙂 Manajemen Operator DC", "📈 Pengawasan Proyek"])
     
     with tab_admin1:
         st.subheader("Registrasi Operator Baru")
@@ -91,10 +89,6 @@ if st.session_state.user_role == "administrator":
 st.sidebar.success(f"DC: {st.session_state.user_full_name}")
 if st.sidebar.button("Log Out"): st.session_state.is_logged_in = False; st.rerun()
 
-# if "authenticated" not in st.session_state:
-#     st.session_state.authenticated = False
-# =============================================================================
-
 DEFAULT_METADATA = {
     "NAMA_PROYEK": "EMR FTTH PROJECT", "REGION": "JAWA TIMUR",
     "NAMA_LOKASI": "DUSUN BOGO RW 08 FDT-2", "ID_LOKASI": "NJK000095",
@@ -105,8 +99,6 @@ DEFAULT_METADATA = {
     "REP_CUSTOMER": "M. NUGROHO", "JABATAN_CUSTOMER": "EMR FIELD SUPERVISOR",
     "TANGGAL_TEST": "2026-06-27", "NO_PO": "PO-EMR-2026-001"
 }
-
-st.set_page_config(page_title="Universal ATP Generator", page_icon="7²3", layout="wide")
 
 # Inisialisasi State Memori Sementara Web
 if "initialized" not in st.session_state:
@@ -162,27 +154,27 @@ else:
     st.markdown("""<style>.stApp { background-color: #F9FAFB; color: #1F2937; }</style>""", unsafe_allow_html=True)
 
 with st.sidebar:
-    st.title("7²3 Pusat Kendali")
-    st.session_state.current_theme = "light" if st.toggle("”9Ü1 Mode Terang Web", value=(st.session_state.current_theme == "light")) else "dark"
+    st.title("⚡ Pusat Kendali")
+    st.session_state.current_theme = "light" if st.toggle("🖥 Mode Terang Web", value=(st.session_state.current_theme == "light")) else "dark"
     st.divider()
-    st.markdown("”9ä8 **Panel Akun Administrator (Standby)**\n*Menu khusus pengelolaan data kredensial user baru.*")
+    st.markdown("🔐 **Panel Akun Administrator (Standby)**\n*Menu khusus pengelolaan data kredensial user baru.*")
 
 st.info(generate_dc_greeting())
 
 if not os.path.exists(TEMPLATE_PATH):
-    st.error(f"7²2„1‚5 BERKAS UTAMA HILANG: File `{TEMPLATE_PATH}` wajib diletakkan di root folder aplikasi!")
+    st.error(f"⚠ BERKAS UTAMA HILANG: File `{TEMPLATE_PATH}` wajib diletakkan di root folder aplikasi!")
     st.stop()
 
 # PENENTUAN MODE PROJECT SECARA GLOBAL KAKU
 project_mode = st.radio(
-    "”9ß9 Tentukan Mode Karakteristik Dokumen ATP Jaringan:",
+    "📶 Tentukan Mode Karakteristik Dokumen ATP Jaringan:",
     ["Cluster Jaringan (Distribusi Hilir)", "Subfeeder Jaringan (Backbone Hulu)"],
     horizontal=True
 )
 mode_slug = "cluster" if "Cluster" in project_mode else "subfeeder"
 
 # Pembentukan Struktur Tiga Tab Kerja
-tab1, tab2, tab3 = st.tabs(["”9Ý7 FASE 1: Struktur Kerangka", "”9Ý6 FASE 2: Angka Hasil Ukur", "”9ö6„1‚5 PUSAT ARSIP DIGITAL"])
+tab1, tab2, tab3 = st.tabs(["📝 FASE 1: Struktur Kerangka", "📈 FASE 2: Angka Hasil Ukur", "🗂 PUSAT ARSIP DIGITAL"])
 
 with tab1:
     st.header("1. Metadata Identitas Administratif")
@@ -199,7 +191,7 @@ with tab1:
             st.session_state.metadata["ALAMAT"] = st.text_input("Alamat Lokasi Riil Jaringan:", value=st.session_state.metadata["ALAMAT"] or DEFAULT_METADATA["ALAMAT"])
             st.session_state.metadata["NAMA_OLT"] = st.text_input("Nama Sentral OLT Target:", value=st.session_state.metadata["NAMA_OLT"] or DEFAULT_METADATA["NAMA_OLT"])
             
-        with st.expander("”9ä3 Detail Perusahaan & Penanggung Jawab Lapangan (Opsional)"):
+        with st.expander("🔎 Detail Perusahaan & Penanggung Jawab Lapangan (Opsional)"):
             c1, c2 = st.columns(2)
             with c1:
                 st.session_state.metadata["ID_FDT_FROM"] = st.text_input("ID Link From (FDT Hulu):", value=st.session_state.metadata["ID_FDT_FROM"] or DEFAULT_METADATA["ID_FDT_FROM"])
@@ -211,7 +203,7 @@ with tab1:
                 st.session_state.metadata["NAMA_PT_CUSTOMER"] = st.text_input("Nama PT Pemilik Jaringan:", value=st.session_state.metadata["NAMA_PT_CUSTOMER"] or DEFAULT_METADATA["NAMA_PT_CUSTOMER"])
                 st.session_state.metadata["REP_CUSTOMER"] = st.text_input("Nama Pengawas Pihak Customer:", value=st.session_state.metadata["REP_CUSTOMER"] or DEFAULT_METADATA["REP_CUSTOMER"])
                 st.session_state.metadata["JABATAN_CUSTOMER"] = st.text_input("Jabatan Pengawas Customer:", value=st.session_state.metadata["JABATAN_CUSTOMER"] or DEFAULT_METADATA["JABATAN_CUSTOMER"])
-        st.form_submit_button("”9ä8 Kunci Parameter Administrasi")
+        st.form_submit_button("🔐 Kunci Parameter Administrasi")
 
     st.header("2. Komando Ringkas Pembentuk Topologi Jaringan")
     col_cmd1, col_cmd2 = st.columns(2)
@@ -219,18 +211,18 @@ with tab1:
         st.subheader("A. Pembangun Rute Perangkat FAT")
         for i in range(len(st.session_state.fat_commands)):
             st.session_state.fat_commands[i] = st.text_input(f"Instruksi Baris FAT-{i+1}:", value=st.session_state.fat_commands[i], key=f"fat_cmd_key_{i}", placeholder="Contoh: A12 atau B08")
-        if st.button("7Ê7 Tambah Baris Instruksi FAT"):
+        if st.button("＋ Tambah Baris Instruksi FAT"):
             st.session_state.fat_commands.append("")
             st.rerun()
     with col_cmd2:
         st.subheader("B. Pembangun Distribusi Tiang")
         for i in range(len(st.session_state.pole_commands)):
             st.session_state.pole_commands[i] = st.text_input(f"Instruksi Baris Tiang-{i+1}:", value=st.session_state.pole_commands[i], key=f"pole_cmd_key_{i}", placeholder="Contoh: pole 73 = 14 atau ext 72.5 = 5")
-        if st.button("7Ê7 Tambah Baris Instruksi Tiang"):
+        if st.button("＋ Tambah Baris Instruksi Tiang"):
             st.session_state.pole_commands.append("")
             st.rerun()
 
-    if st.button("”9ã4 EKSTRAK STRUKTUR UTAMA FASE 1", use_container_width=True):
+    if st.button("↻ EKSTRAK STRUKTUR UTAMA FASE 1", use_container_width=True):
         st.session_state.parsed_fat = parse_all_fat([c for c in st.session_state.fat_commands if c.strip()])
         st.session_state.parsed_poles = parse_all_poles([c for c in st.session_state.pole_commands if c.strip()])
         st.session_state.fase1_extracted = True
@@ -238,9 +230,9 @@ with tab1:
 
     if st.session_state.get("fase1_extracted"):
         st.divider()
-        st.subheader("”9à3 Pencetakan Berkas Draf Kerangka (Fase 1)")
+        st.subheader("⬇ Pencetakan Berkas Draf Kerangka (Fase 1)")
         st.caption("Pencetakan draf ini mengosongkan seluruh sel teknis (Fase 2 tetap dibiarkan utuh berupa token placeholder di Excel).")
-        if st.button("”9Ü4 KOMPILASI BERKAS DRAF FASE 1", use_container_width=True):
+        if st.button("💿 KOMPILASI BERKAS DRAF FASE 1", use_container_width=True):
             try:
                 with open(TEMPLATE_PATH, "rb") as f:
                     template_bytes = f.read()
@@ -253,7 +245,7 @@ with tab1:
                 st.error(traceback.format_exc())
                 
         if st.session_state.get("f1_download_ready"):
-            st.download_button("•0‹4 UNDUH FILE DRAF FASE 1 (.XLSX)", data=st.session_state.stream_f1_output, file_name=f"DRAF_KERANGKA_F1_{mode_slug.upper()}.xlsx", use_container_width=True)
+            st.download_button("▶ UNDUH FILE DRAF FASE 1 (.XLSX)", data=st.session_state.stream_f1_output, file_name=f"DRAF_KERANGKA_F1_{mode_slug.upper()}.xlsx", use_container_width=True)
 
 with tab2:
     st.header("Formulir Input Nilai Pengukuran Sektor Optik (Fase 2)")
@@ -266,10 +258,10 @@ with tab2:
         render_modul_2c_2d_otdr_summary(st.session_state.parsed_fat, mode_slug)
         
         st.divider()
-        st.subheader("”9à3 Eksekusi Akhir Pipeline Dokumen Gabungan")
+        st.subheader("⬇ Eksekusi Akhir Pipeline Dokumen Gabungan")
         st.caption("Proses ini merakit dokumen final murni di memori RAM secara estafet: Template -> Mesin Fase 1 -> Mesin Fase 2 -> File Excel Bersih.")
         
-        if st.button("”9Ü4 COMPILING & GENERATE FINAL ATP EXCEL", use_container_width=True):
+        if st.button("💿 COMPILING & GENERATE FINAL ATP EXCEL", use_container_width=True):
             try:
                 with open(TEMPLATE_PATH, "rb") as f:
                     template_bytes = f.read()
@@ -287,15 +279,15 @@ with tab2:
                 st.error(traceback.format_exc())
                 
         if st.session_state.get("final_download_ready"):
-            st.download_button("•0‹4 DOWNLOAD BERKAS FINAL ATP EXCEL (.XLSX)", data=st.session_state.stream_final_output, file_name=f"FINAL_ATP_BERSIH_{mode_slug.upper()}.xlsx", use_container_width=True)
+            st.download_button("▶ DOWNLOAD BERKAS FINAL ATP EXCEL (.XLSX)", data=st.session_state.stream_final_output, file_name=f"FINAL_ATP_BERSIH_{mode_slug.upper()}.xlsx", use_container_width=True)
     else:
-        st.warning("7²2„1‚5 Perhatian: Ekstrak dan kunci data topologi rute di Tab Fase 1 terlebih dahulu agar form input angka ini dapat terbuka.")
+        st.warning("⚠ Perhatian: Ekstrak dan kunci data topologi rute di Tab Fase 1 terlebih dahulu agar form input angka ini dapat terbuka.")
 
 with tab3:
-    st.header("”9ö6„1‚5 Brankas Digital Manajemen database Proyek")
+    st.header("🗂 Brankas Digital Manajemen database Proyek")
     st.caption("Pusat pengamanan terpusat untuk menyimpan progress kerja harian (Administrasi F1 + Angka Isian F2) murni ke format biner JSON lokal.")
     
-    if st.button("”9Ü4 KUNCI PROGRESS KERJA KE DATABASE JSON", use_container_width=True):
+    if st.button("💿 KUNCI PROGRESS KERJA KE DATABASE JSON", use_container_width=True):
         loc_raw = st.session_state.metadata.get("NAMA_LOKASI", "PROYEK_BARU").strip()
         filename_clean = loc_raw.replace(" ", "_").replace("-", "_").upper()
         
@@ -318,19 +310,19 @@ with tab3:
                 
         with open(f"{DB_DIR}/{filename_clean}.json", "w", encoding="utf-8") as j_file:
             json.dump(json_contract, j_file, indent=4)
-        st.success(f"7¼3 Progres Berhasil Diamankan! Berkas database `{filename_clean}.json` terkunci aman.")
+        st.success(f"☑ Progres Berhasil Diamankan! Berkas database `{filename_clean}.json` terkunci aman.")
 
     st.divider()
     available_json_files = [f for f in os.listdir(DB_DIR) if f.endswith(".json")]
     if available_json_files:
-        query_search = st.text_input("”9ä3 Cari Berkas Arsip Berdasarkan Nama Lokasi:")
+        query_search = st.text_input("🔎 Cari Berkas Arsip Berdasarkan Nama Lokasi:")
         for file in available_json_files:
             if query_search.lower() in file.lower():
                 col_name, col_act = st.columns([3, 1])
                 with col_name:
-                    st.markdown(f"”9Ü7 Arsip Terdaftar: `{file}`")
+                    st.markdown(f"🗂 Arsip Terdaftar: `{file}`")
                 with col_act:
-                    if st.button("”9à3 Muat Kembali", key=f"btn_load_{file}", use_container_width=True):
+                    if st.button("⬇ Muat Kembali", key=f"btn_load_{file}", use_container_width=True):
                         with open(f"{DB_DIR}/{file}", "r", encoding="utf-8") as j_file:
                             loaded = json.load(j_file)
                         
@@ -356,4 +348,4 @@ with tab3:
                         st.success("Progress berhasil dipulihkan total ke kondisi terakhir!")
                         st.rerun()
 
-st.markdown('<div style="text-align: center; color: #888888; padding: 20px; font-size: 13px;">Universal ATP Generator Application 6¦1 Developed by An_</div>', unsafe_allow_html=True)
+st.markdown('<div style="text-align: center; color: #888888; padding: 20px; font-size: 13px;">Universal ATP Generator Application • Developed by An_</div>', unsafe_allow_html=True)
